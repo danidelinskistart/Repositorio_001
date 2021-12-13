@@ -94,6 +94,7 @@
     <input type="hidden" name="m" value="0" />
     <input type="hidden" name="act" value="sub" />
     <input type="hidden" name="v" value="2" />
+    <input type="hidden" name="or" value="0a181309aba0febd22f3a54a25f212d4" />
     <div class="_form-content">
       <div class="_form_element _x08534533 _full_width " >
         <label for="fullname" class="_form-label">
@@ -109,6 +110,21 @@
           <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required/>
         </div>
       </div>
+      <div class="_form_element _field49 _full_width " >
+        <input type="hidden" name="field[49]" value="" />
+      </div>
+      <div class="_form_element _field50 _full_width " >
+        <input type="hidden" name="field[50]" value="" />
+      </div>
+      <div class="_form_element _field51 _full_width " >
+        <input type="hidden" name="field[51]" value="" />
+      </div>
+      <div class="_form_element _field52 _full_width " >
+        <input type="hidden" name="field[52]" value="" />
+      </div>
+      <div class="_form_element _field53 _full_width " >
+        <input type="hidden" name="field[53]" value="" />
+      </div>
       <div class="_button-wrapper _full_width">
         <button id="_form_9_submit" class="_submit" type="submit">
           FAZER MEU CADASTRO
@@ -120,7 +136,7 @@
     <div class="_form-thank-you" style="display:none;">
     </div>
   </form><script type="text/javascript">
-window.cfields = [];
+window.cfields = {"49":"utmsource","50":"utmmedium","51":"utmcampaign","52":"utmterm","53":"utmcontent"};
 window._show_thank_you = function(id, message, trackcmp_url, email) {
   var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
   form.querySelector('._form-content').style.display = 'none';
@@ -433,7 +449,7 @@ window._load_script = function(url, callback) {
     if (validate_form()) {
       // use this trick to get the submit button & disable it using plain javascript
       document.querySelector('#_form_9_submit').disabled = true;
-            var serialized = _form_serialize(document.getElementById('_form_9_'));
+            var serialized = _form_serialize(document.getElementById('_form_9_')).replace(/%0A/g, '\\n');
       var err = form_to_submit.querySelector('._form_error');
       err ? err.parentNode.removeChild(err) : false;
       _load_script('https://cursosdanidelinski.activehosted.com/proc.php?' + serialized + '&jsonp=true');
